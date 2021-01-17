@@ -1,5 +1,7 @@
 carts:
   enabled: false
+carts-generated:
+  enabled: false
 test-service:
   enabled: false
 test-service-generated:
