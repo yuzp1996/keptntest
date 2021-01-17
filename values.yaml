@@ -1,2 +1,4 @@
 test-service:
   enabled: false
+test-service-generated:
+  enabled: false
