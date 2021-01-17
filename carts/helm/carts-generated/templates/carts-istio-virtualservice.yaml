@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts.zpyu-production.svc.cluster.local
+  - carts
+  http:
+  - route:
+    - destination:
+        host: carts-canary.zpyu-production.svc.cluster.local
+    - destination:
+        host: carts-primary.zpyu-production.svc.cluster.local
+      weight: 100
